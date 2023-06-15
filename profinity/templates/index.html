@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Profanity Check</title>
+</head>
+<body>
+    <h1>Profanity Check</h1>
+
+    <form method="POST" enctype="multipart/form-data">
+        <input type="file" name="file" accept=".xlsx">
+        <input type="submit" value="Upload">
+    </form>
+
+    {% if error %}
+        <p>{{ error }}</p>
+    {% endif %}
+
+    {% if result %}
+        <table>
+            {{ result|safe }}
+        </table>
+    {% endif %}
+</body>
+</html>
